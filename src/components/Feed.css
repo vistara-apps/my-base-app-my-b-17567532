@@ -1,0 +1,73 @@
+.feed {
+  flex: 1;
+  max-width: 600px;
+  border-right: 1px solid #333333;
+  background-color: #000000;
+}
+
+.feed-header {
+  position: sticky;
+  top: 56px;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #333333;
+  padding: 16px 20px;
+  z-index: 10;
+}
+
+.feed-header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.feed-options {
+  display: flex;
+  gap: 32px;
+}
+
+.option-button {
+  background: none;
+  border: none;
+  color: #666666;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 8px;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.option-button:hover {
+  color: #ffffff;
+}
+
+.option-button.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.option-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #1da1f2;
+  border-radius: 1px;
+}
+
+.tweets {
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .feed {
+    border-right: none;
+  }
+  
+  .feed-header {
+    padding: 16px;
+  }
+}

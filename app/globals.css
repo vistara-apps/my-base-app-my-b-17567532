@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #14171a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@layer components {
+  .post-card {
+    @apply bg-white border border-gray-200 rounded-lg p-4 mb-4 hover:bg-gray-50 transition-colors duration-200;
+  }
+  
+  .avatar {
+    @apply w-12 h-12 rounded-full object-cover;
+  }
+  
+  .username {
+    @apply font-bold text-gray-900;
+  }
+  
+  .handle {
+    @apply text-gray-500 text-sm;
+  }
+  
+  .post-content {
+    @apply text-gray-900 mt-2 leading-relaxed;
+  }
+  
+  .post-actions {
+    @apply flex items-center justify-between mt-4 text-gray-500;
+  }
+  
+  .action-btn {
+    @apply flex items-center space-x-1 hover:text-primary transition-colors duration-200 cursor-pointer;
+  }
+}

@@ -1,0 +1,124 @@
+.tweet-composer {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid #333333;
+  gap: 12px;
+}
+
+.composer-avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.composer-content {
+  flex: 1;
+}
+
+.composer-textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.5;
+  resize: none;
+  outline: none;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.composer-textarea::placeholder {
+  color: #666666;
+}
+
+.composer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.composer-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  color: #1da1f2;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+
+.composer-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.character-count {
+  font-size: 14px;
+  color: #666666;
+}
+
+.character-count .warning {
+  color: #f91880;
+}
+
+.tweet-button {
+  background-color: #1da1f2;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  opacity: 0.5;
+}
+
+.tweet-button.active {
+  opacity: 1;
+}
+
+.tweet-button:hover.active {
+  background-color: #1a91da;
+}
+
+.tweet-button:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .tweet-composer {
+    padding: 16px;
+  }
+  
+  .composer-textarea {
+    font-size: 18px;
+    min-height: 100px;
+  }
+  
+  .composer-actions {
+    gap: 12px;
+  }
+  
+  .action-button {
+    width: 32px;
+    height: 32px;
+  }
+}
