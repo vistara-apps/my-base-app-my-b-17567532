@@ -54,20 +54,29 @@ const mockPosts = [
 export default function App() {
   const { setFrameReady, isFrameReady } = useMiniKit();
   const [posts, setPosts] = useState(mockPosts);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     if (!isFrameReady) {
       setFrameReady();
     }
+    
+    // Mock user data - in a real app, this would come from authentication
+    setUser({
+      address: '0x1234567890abcdef1234567890abcdef12345678',
+      username: 'you',
+      displayName: 'You',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
+    });
   }, [setFrameReady, isFrameReady]);
 
   const handleNewPost = (content) => {
     const newPost = {
       id: posts.length + 1,
       user: {
-        name: 'You',
-        handle: '@you',
-        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
+        name: user?.displayName || 'You',
+        handle: `@${user?.username || 'you'}`,
+        avatar: user?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
       },
       content,
       timestamp: 'now',
